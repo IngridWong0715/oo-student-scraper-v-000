@@ -30,7 +30,7 @@ class Scraper
       if attribute == "linkedin" || attribute == "twitter" || attribute == "github"
         profile_info[attribute.to_sym] = platform.attr("href")
       else
-        profile_info[:blog] = platform.attributes["href"].value
+        profile_info[:blog] = platform.attr("href")
       end
 
     end
