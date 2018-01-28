@@ -10,7 +10,7 @@ class Scraper
 
     students.inject([]) do |acc, student|
       student_hash = {}
-      student_hash[:profile_url] = student.css("a[href]").first.attributes["href"].value
+      student_hash[:profile_url] = student.css("a[href]").first.attr("href")
       student_hash[:name] = student.css(".student-name").text
       student_hash[:location] = student.css(".student-location").text
       acc << student_hash
